@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exp.css">
+    <title>exp</title>
+</head>
+<body>
+    <header>
+        <div id="brand"><a href="#"><img src="EEG.png" alt="avatar" class="avatar"> Singnal processing</a></div>
+        <nav>
+            <ul>
+                <li><a href="#"> Matlab</a></li>
+                <li><a href="#"> Python</a></li>
+                <li><a href="#"> Tutorials</a></li>
+                <ul class="dropdown"> <li> <a href="#" onclick="DropDown()" class="dropbtn">Labs</a></li> 
+                    <ul class="dropdown-content" id="myDropdown">
+                    <li><a href="#" onclick="Lab1()"> Лаб.№ 1</a></li>
+                    <li><a href="#"> Лаб.№ 2</a></li>
+                </ul>
+                </ul>
+
+               
+            </ul>
+        </nav>
+        <nav>
+        <ul>
+        <li><a href="/"> registration</a></li>
+        <li><a href="/"> login</a></li>
+        </nav>
+        <div id="hamburger-icon" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="#"> Matlab</a></li>
+                <li><a href="#"> Python</a></li>
+                <li><a href="#"> Tutorials</a></li>
+                <li><a href="/"> Labs</a></li>
+                <li><a href="#"> registration</a></li>
+                <li><a href="#"> login</a></li>
+
+            </ul>
+        </div>
+        <script src="exp.js"></script>
+    </header>
+   <main>
+    <div class="main" id="main_col">
+        <div class="grid-main" id="left-bar"> 
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+       <div>signal</div>
+
+        </div>
+        <div class="grid-main main_img" id="midlle_col"> <p style=" position: absolute; bottom: 180px;  text-align: center; color: #f8f8f8;"> ВлГУ - Виомедицинская инженерия </p> </div>
+        <div class="grid-main" id="right-bar"> </div>
+    </div>
+  </main>
+  <footer >
+    <div class="footer"> &copy; Mohammed Gamil <br> All rights are reserved</div>
+</footer>
+</body>
+</html>

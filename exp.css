@@ -1,0 +1,197 @@
+*{box-sizing: border-box;
+}
+
+body{
+  background-color: rgba(255, 255, 255, 0.925);
+}
+
+header a{
+  text-decoration: none;
+}
+
+header {
+  padding: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-color: rgb(126, 122, 122);
+  border-style:solid outset;
+}
+
+#brand{
+  display: flex;
+  align-items: center;
+  color:rgb(76, 76, 245);
+  font-weight: bolder;
+}
+
+.avatar{
+  padding-left: 0;
+  margin-left: 0;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  
+  margin-top: 10px;
+}
+
+.grid-main {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  
+  font-size: 30px;
+  text-align: center;
+}
+.footer {
+margin-top: 10px;
+display: flex;
+border-top: 1px solid;
+height: 50px;
+border-color: rgb(106, 106, 109);
+
+}
+
+.main_img{
+  background-image: url('back_3.webp');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+}
+@keyframes rotateScale { 
+  0% { 
+      transform: rotate(0deg); 
+  } 
+  50% { 
+      transform: rotate(180deg); 
+  } 
+  100% { 
+      transform: rotate(360deg); 
+  } 
+} 
+
+.avatar { 
+  animation: rotateScale 5s linear infinite; 
+}
+ul{
+  list-style:none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav{
+  display: flex;
+  align-items: center;
+}
+ul a{
+  color: rgb(0, 0, 0);
+}
+ul li{
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover{
+  transform: scale(1.3);
+  transition: 0.4s;
+}
+
+#hamburger-icon{
+  display:none;
+  cursor: pointer;
+  margin: auto 0;
+}
+#hamburger-icon div{
+  width: 35px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  margin: 6px 0;
+  transition: 0.4;
+}
+
+.open .bar1{
+  /*-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);*/
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.open .bar2{
+  opacity: 0;
+}
+
+.open .bar3{
+ /* -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);*/
+    transform: translate(0, -11px) rotate(45deg);
+}
+.open .mobile-menu{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mobile-menu{
+  display: none;
+  position:absolute;
+  top: 50px;
+  left:0;
+  height: calc(100vh-50px);
+  width:100%;}
+   /* ................................................. css lab1 //////////////////////////////////*/
+
+  /* ................................................. css lab1 //////////////////////////////////*/
+
+
+  /* DropDown//////////////////////////////////*/
+  /* DropDown//////////////////////////////////*/
+  /* DropDown//////////////////////////////////*/
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #dbd0d0e0;
+  min-width: 80px;
+  overflow: auto;
+  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+  z-index: 2;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+.show {display:block;}
+  /* DropDown//////////////////////////////////*/
+
+@media only screen and (max-width:800px){
+  header nav {
+    display: none;
+  }
+  #hamburger-icon{
+    display:block;
+  }
+  .mobile-menu{
+    display: none;
+  }
+
+
+  .main{
+    grid-template-columns: 0 auto 0;
+  }
+}
