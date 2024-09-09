@@ -33,6 +33,12 @@ window.onclick = function(event) {
   }
 }
 
+////////////////////////////////////
+
+function Mygirl(){
+  const element=document.getElementById('midlle_col');
+element.innerHTML=`<h1> I am from mobile menu ----------------------------</h1>`
+}
 ////////////////////////// Лаб 1................................./////////////////////////////////////////////////
 function Lab1(){
   var cssId = 'myCss';  // you could encode the css path itself to generate id..

@@ -14,7 +14,8 @@
                 <li><a href="#"> Matlab</a></li>
                 <li><a href="#"> Python</a></li>
                 <li><a href="#"> Tutorials</a></li>
-                <ul class="dropdown"> <li> <a href="#" onclick="DropDown()" class="dropbtn">Labs</a></li> 
+                <ul class="dropdown"> 
+                    <li> <a href="#" onclick="DropDown()" class="dropbtn">Labs</a></li> 
                     <ul class="dropdown-content" id="myDropdown">
                     <li><a href="#" onclick="Lab1()"> Лаб.№ 1</a></li>
                     <li><a href="#"> Лаб.№ 2</a></li>
@@ -26,8 +27,8 @@
         </nav>
         <nav>
         <ul>
-        <li><a href="/"> registration</a></li>
-        <li><a href="/"> login</a></li>
+        <li><a href="#"> registration</a></li>
+        <li><a href="#"> login</a></li>
         </nav>
         <div id="hamburger-icon" onclick="myFunction(this)">
             <div class="bar1"></div>
@@ -37,7 +38,7 @@
                 <li><a href="#"> Matlab</a></li>
                 <li><a href="#"> Python</a></li>
                 <li><a href="#"> Tutorials</a></li>
-                <li><a href="/"> Labs</a></li>
+                <li><a href="#" onclick="Lab1()" id="lab_menu">Labs</a></li>
                 <li><a href="#"> registration</a></li>
                 <li><a href="#"> login</a></li>
 
@@ -47,31 +48,33 @@
     </header>
    <main>
     <div class="main" id="main_col">
-        <div class="grid-main" id="left-bar"> 
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-       <div>signal</div>
-
-        </div>
-        <div class="grid-main main_img" id="midlle_col"> <p style=" position: absolute; bottom: 180px;  text-align: center; color: #f8f8f8;"> ВлГУ - Виомедицинская инженерия </p> </div>
+    <div class="grid-main" >
+    <div class="left-bar">
+        <ul id="left-bar">
+       <li>Signal</li>
+       <li>Signal processing</li>
+       <li>Continuous signal </li>
+       <li>Digital signal</li>
+       <li>Time domain</li>
+       <li>Frequency domain</li>
+       <li>Time-frequency domain</li>
+       <li>Statistics</li>
+       <li>Sampling</li>
+       <li>Quantization</li>
+       <li>Fourier series</li>
+       <li>Fourier transform</li>
+       <li>Wavelete transform</li>
+       <li> Principal component analysis</li>
+       <li>Independent component analysis</li>
+       <li>Singular value decomposition</li>
+       <li>Filteration</li>
+       <li>ECG processing</li>
+       <li>EEG</li>
+       <li>Image processing</li>
+       </ul>
+    </div> 
+    </div>
+        <div class="grid-main main_img" id="midlle_col"> <p style=" text-align: right; color: #ffffff;"> ВлГУ- Биомедицинская инженерия </p> </div>
         <div class="grid-main" id="right-bar"> </div>
     </div>
   </main>
