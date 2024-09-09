@@ -1,0 +1,15 @@
+
+
+#midlle_col{
+    background-color: rgb(8, 8, 238);
+}
+
+
+
+#midlle_col> span {
+    background-color: rgb(165, 67, 67);
+  }
+  
+  #midlle_col> h1,h2,h3{
+    color: aliceblue;
+  }
