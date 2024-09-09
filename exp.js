@@ -49,7 +49,7 @@ if (!document.getElementById(cssId))
 }
 
   const element=document.getElementById('midlle_col');
-element.innerHTML=`<span lang='Rus'> 
+element.innerHTML=`<div lang='Rus'> 
 <h2>Лабораторная работа- 1 </h2>
 <h2>Операции над матрицами и векторами в системе MATLAB</h2>
 
@@ -373,5 +373,5 @@ A = filter2(ones(3,3), A);
 
 A(nan_locations) = NaN; 
 
-</span>
+</div>
 `}

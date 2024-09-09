@@ -2,12 +2,13 @@
 
 #midlle_col{
     background-color: rgb(8, 8, 238);
+    font-size: large;
 }
 
 
 
-#midlle_col> span {
-    background-color: rgb(165, 67, 67);
+#midlle_col> div {
+    background-color: rgb(66, 144, 233);
   }
   
   #midlle_col> h1,h2,h3{
