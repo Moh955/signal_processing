@@ -32,7 +32,7 @@
     margin-top: 40px;
   }
 
-  #midlle_col #simple li{
+  #midlle_col .simple li{
     list-style:disc;
     list-style-position: inside;
     text-align: left;
@@ -43,4 +43,14 @@
   #midlle_col .simple ul h5{
   
     display: inline;
+  }
+
+  @media only screen and (max-width:800px){
+    #midlle_col h1,h2,h3,h4,h5 {
+      font-size: large;
+    }
+
+    #midlle_col ul,li,p{
+      font-size:medium;
+    }
   }
