@@ -14,7 +14,7 @@
   }
  
 
-  #midlle_col ul li{
+    #main_ul ul li{
     list-style:decimal;
     list-style-position: inside;
   }
@@ -30,6 +30,8 @@
 
   #midlle_col #main_ul{
     margin-top: 40px;
+    list-style:decimal;
+    list-style-position: inside;
   }
 
   #midlle_col .simple li{
