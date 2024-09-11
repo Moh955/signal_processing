@@ -195,7 +195,6 @@ element.innerHTML=`<div lang='ru' translate="no">
     <li>3. Как определяется индексация элементов векторa? </li>
    </ul>
 </ul>
-
 </div>
 `}
 
