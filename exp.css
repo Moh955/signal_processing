@@ -85,10 +85,35 @@ nav li{
   text-align: center;
   border:1px solid white;
   border-radius: 10px;
+  
 }
+
+
+
+#midlle_col> #text_m{
+animation-name: textt;
+animation-duration: 30s;
+position: relative;
+left:0px;
+top:200px;
+animation-iteration-count: infinite;
+text-align: left;
+}
+
+@keyframes textt {
+  0%   {color:rgb(255, 255, 255); left:0px; }
+
+  95%  {color:rgb(195, 207, 195); left:70%; }
+  100% {color:rgb(255, 252, 252); left:0px; }
+
+}
+
+
+
+
 .footer {
 margin-top: 10px;
-display: flex;
+display: block;
 border-top: 1px solid;
 height: 50px;
 border-color: rgb(106, 106, 109);
