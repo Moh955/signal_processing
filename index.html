@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="exp.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <title>exp</title>
 </head>
 <body>
+    <script src="loginnnn.js"></script>
     <header>
         <div id="brand"><a href="#"><img src="EEG.png" alt="avatar" class="avatar" translate="no"> Singnal processing</a></div>
         <nav>
@@ -15,7 +17,7 @@
                 <li><a href="#"> Python</a></li>
                 <li><a href="#"> Tutorials</a></li>
                 <ul class="dropdown"> 
-                    <li> <a href="#" onclick="DropDown()" class="dropbtn">Labs</a></li> 
+                    <li> <a href="#" onclick="DropDown()" class="dropbtn" id="labs_dis" >Labs</a></li> 
                     <ul class="dropdown-content" id="myDropdown">
                     <li><a href="#" onclick="Lab1()"> Лаб.№ 1</a></li>
                     <li><a href="#"> Лаб.№ 2</a></li>
@@ -24,9 +26,26 @@
             </ul>
         </nav>
         <nav>
+            <script src="Registation.js"></script>
+            <!--script src="login.js"></script-->
+            
+        <!-- Templates for the web components-->
+            <template id="template_2">
+                
+                <registration-form >Here is registration form</registration-form>
+                
+              </template>
+              
+              <template id="template_3">
+                <login-form> Here is login form </login-form>
+
+              </template>
+          <!-- ------------------------------------------------------------>
+
         <ul translate="no">
-        <li><a href="#"> Registration</a></li>
-        <li><a href="#"> Login</a></li>
+        <li><a href="#" onclick="Mysignup(); this.onclick=null;"> Registration</a></li>
+        <li><a href="#" onclick="Mylogin(); this.onclick=null;" id="btnlg"> Login</a></li>
+     
         </nav>
         <div id="hamburger-icon" onclick="myFunction(this)">
             <div class="bar1"></div>
@@ -37,8 +56,8 @@
                 <li><a href="#"> Python</a></li>
                 <li><a href="#"> Tutorials</a></li>
                 <li><a href="#" onclick="Lab1()" id="lab_menu">Labs</a></li>
-                <li><a href="#"> registration</a></li>
-                <li><a href="#"> login</a></li>
+                <li><a href="#" onclick=" Mylogin_mini(); this.onclick=null;"> login</a></li>
+                <li><a href="#" onclick="Mysignup_mini(); this.onclick=null;">Registration </a></li>
 
             </ul>
         </div>
@@ -73,7 +92,10 @@
     </div> 
     </div>
         <div class="grid-main main_img" id="midlle_col"> <p  id="text_m"> ВлГУ- Биомедицинская инженерия </p> </div>
-        <div class="grid-main" id="right-bar"> </div>
+        <div class="grid-main" id="right-bar">
+            <div id="mylogdiv"></div>
+        
+        </div>
     </div>
   </main>
   <footer >

@@ -46,7 +46,7 @@ font-size: large;
 font-weight: bold;
 }
 nav li{
-  border: 1px solid black;
+  border: 1px solid rgb(20, 4, 241);
   border-radius: 10px;
   margin: 1px;
 }
@@ -76,7 +76,7 @@ nav li{
 
 .main {
   display: grid;
-  grid-template-columns: 10% 80% 10%;
+  grid-template-columns: 10% 70% 20%;
   margin: 2px;
   padding: 2px;
   column-gap: 3px;
@@ -174,7 +174,7 @@ header ul li:hover{
 #hamburger-icon div{
   width: 35px;
   height: 3px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(4, 2, 129);
   margin: 6px 0;
   transition: 0.4;
 }
@@ -204,9 +204,12 @@ header ul li:hover{
   display: none;
   position:absolute;
   top: 50px;
-  left:0;
+  right:0;
+  background-color: rgba(105, 149, 245, 0.795);
+  border: 4px solid white;
+  border-radius: 15px;
   height: calc(100vh-50px);
-  width:100%;}
+  width:35%;}
    /* ................................................. css lab1 //////////////////////////////////*/
 
   /* ................................................. css lab1 //////////////////////////////////*/

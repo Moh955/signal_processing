@@ -1,16 +1,44 @@
 function myFunction(x) {
     x.classList.toggle("open");
   }
+/////////////////////////////////////////////////////////
+function mini_lab(){
+const mini_lab=document.getElementById('lab_menu');
+const menu=document.createElement('ul');
 
-
+}
+//////////////////////////check login status//////////////////////////////
+function checkLoginStatu() {
+  const username = localStorage.getItem('username');
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+    let success=false;
+  if (username && isLoggedIn === 'true') {
+      // User is logged in
+      
+      success=true;
+  } else if (username) {
+      // User has an account but is logged out
+      success=false
+  } else {
+      // No user stored in localStorage
+     
+      success=false;
+  }
+  return success
+}
   
 /////////////////////////////////////////////////////////* When the user clicks on the button,toggle between hiding and showing the dropdown content */
 function DropDown() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  const lab_disabled=document.getElementById('labs_dis');
+  if(checkLoginStatu()){
+  document.getElementById("myDropdown").classList.toggle("show");} else{
+    alert('Log in to access labs')
+  }
 }
 
-// Close the dropdown menu if the user clicks outside of it
 
+
+  
 /////////////////////////////////////////////////////////////
 
 
