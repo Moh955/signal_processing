@@ -2,7 +2,13 @@
   padding: 0;
   margin: 0;
 }
-
+#homePage:hover{
+  background-color: rgba(41, 52, 212, 0.651);
+  color: white;
+  padding:2px;
+  border: 1px solid blue;
+  border-radius: 20px;
+}
 body{
   background-color: rgba(255, 255, 255, 0.925);
 }
@@ -97,17 +103,19 @@ nav li{
 animation-name: textt;
 animation-duration: 30s;
 position: relative;
-left:0px;
-top:200px;
+
+overflow: hidden;
+
 animation-iteration-count: infinite;
 text-align: left;
 }
 
 @keyframes textt {
-  0%   {color:rgb(255, 255, 255); left:0px; }
+  0%   {color:rgb(255, 255, 255); left:0; }
+  20%   {color:rgb(255, 255, 255); top:20px; }
 
-  95%  {color:rgb(195, 207, 195); left:70%; }
-  100% {color:rgb(255, 252, 252); left:0px; }
+  40%  {color:rgb(195, 207, 195); top:80%; }
+  100% {color:rgb(255, 252, 252); top:0px; }
 
 }
 
@@ -158,7 +166,8 @@ header ul a{
 }
 header ul li{
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 8px;
+  margin-right: 9px;
 }
 
 header ul li:hover{
@@ -204,12 +213,16 @@ header ul li:hover{
   display: none;
   position:absolute;
   top: 50px;
-  right:0;
-  background-color: rgba(105, 149, 245, 0.795);
+  right:1px;
+  direction: rtl;
+  
+  background-color: rgba(207, 216, 236, 0.795);
   border: 4px solid white;
   border-radius: 15px;
   height: calc(100vh-50px);
-  width:35%;}
+  width:150px;}
+
+ 
    /* ................................................. css lab1 //////////////////////////////////*/
 
   /* ................................................. css lab1 //////////////////////////////////*/
@@ -245,10 +258,11 @@ header ul li:hover{
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
+/*////////////////////////////////////////////////*/
 .show {display:block;}
   /* DropDown//////////////////////////////////*/
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:780px){
   header nav {
     display: none;
   }

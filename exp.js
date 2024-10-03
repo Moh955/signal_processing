@@ -2,13 +2,18 @@ function myFunction(x) {
     x.classList.toggle("open");
   }
 /////////////////////////////////////////////////////////
+function homePage(){
+location.reload();
+}
+
+//////////////////////////////////////////////////
 function mini_lab(){
 const mini_lab=document.getElementById('lab_menu');
 const menu=document.createElement('ul');
 
 }
 //////////////////////////check login status//////////////////////////////
-function checkLoginStatu() {
+export function checkLoginStatu() {
   const username = localStorage.getItem('username');
   const isLoggedIn = localStorage.getItem('isLoggedIn');
     let success=false;
@@ -41,13 +46,6 @@ function DropDown() {
   
 /////////////////////////////////////////////////////////////
 
-
-function Mohammed(){
-  document.getElementById('midlle_col').innerHTML=`<h1> Not god but Allah</h1>`
-}
-
-//////////////////////////////////////////
-
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     let dropdowns = document.getElementsByClassName("dropdown-content");
@@ -68,7 +66,7 @@ function Mygirl(){
 element.innerHTML=`<h1> I am from mobile menu ----------------------------</h1>`
 }
 ////////////////////////// Лаб 1................................./////////////////////////////////////////////////
-function Lab1(){
+export function Lab1(){
   var cssId = 'myCss';  // you could encode the css path itself to generate id..
 if (!document.getElementById(cssId))
 {
@@ -262,7 +260,7 @@ diff_v = v1 - v2= -3    -3    -3;</pre>
 
 
 ////////////////////////////////////////////////////////////
-function Lab2(){
+export function Lab2(){
   var cssId = 'myCss';  // you could encode the css path itself to generate id..
 if (!document.getElementById(cssId))
 {
@@ -387,13 +385,13 @@ disp(B);
 </p>
            </p>
        </li>
-     <1i>
+    
    
      <li> <h5> Задание 1:  <span style="font-weight: normal;">Создайте программный скрипт и функцию, которые можно использовать для создания 2D матриц.</span> </h5></li>
       <li><h5>Задание 2:  <span style="font-weight: normal;">Преобразуйте матрицу 4x5 с помощью функции reshape() в столбец-вектор.</span> </h5></li>
       <li><h5>Задание 3:  <span style="font-weight: normal;">Преобразуйте матрицу 4x5 с помощью функции reshape() в в строку-вектор.</span> </h5></li>
-      <li><h5> Задание 4:  <span style="font-weight: normal;">Создайте программный  функцию, которая можно использовать для создания 3D матриц.</span> </h5></li>
-      <li><h5> Задание 5:  <span style="font-weight: normal;">Создайте программный  функцию, которая можно использовать для преобразования 3D матрицы в 2D матрицы.</span> </h5></li>
+      <li><h5> Задание 4:  <span style="font-weight: normal;">Создайте программную  функцию, которая можно использовать для создания 3D матриц.</span> </h5></li>
+      <li><h5> Задание 5:  <span style="font-weight: normal;">Создайте программную функцию, которая можно использовать для преобразования 3D матрицы в 2D матрицы.</span> </h5></li>
     
       </li>
  
@@ -417,3 +415,11 @@ disp(B);
 </div>
 `
 }
+
+
+window.myFunction=myFunction;
+window.Lab1=Lab1;
+window.Lab2=Lab2;
+window.DropDown=DropDown;
+window.homePage=homePage;
+window.checkLoginStatu=checkLoginStatu;

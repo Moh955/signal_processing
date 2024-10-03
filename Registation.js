@@ -1,3 +1,5 @@
+
+
 class regi extends HTMLElement{
     constructor(){
         super()
@@ -9,6 +11,11 @@ class regi extends HTMLElement{
         form.setAttribute('action','');
         form.setAttribute('id','form');
         shadow.appendChild(form);
+        ////////////////////////////111-----
+        const btnclose=document.createElement('div');
+        btnclose.setAttribute('class','close');
+        btnclose.innerHTML='&times;'
+        form.appendChild(btnclose);
         ////222/////////////////////////////////
 
         const hh=document.createElement('h4');
@@ -105,10 +112,24 @@ shadow.appendChild(style);
 
 #form{
     width:300px;
-    margin:5vh auto 0 auto;
+   /* margin:5vh auto 0 auto;*/
     background-color: #d1e1fc;
     border-radius: 5px;
-    padding:30px;
+    padding:0 30px 30px 30px;
+/*/////////////////*/
+
+
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*border: 3px solid #f1f1f1;*/
+  z-index: 9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+
+
 }
 
 h4{
@@ -170,9 +191,28 @@ h4{
 
 label{
 font-size:18px}
+
+ .close {
+    cursor: pointer;
+    width:30px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+.close:hover{
+background-color:red;}
     `
-/////////////////////////
+    //////////////////////////////////close
+
+
+
+
+
+    //////////////////////////////close
+    
     }
+
 }
   customElements.define('registration-form',regi)
 
@@ -187,30 +227,18 @@ font-size:18px}
       // validation registration logic 
      
 
-      function Mychange(){
-       // const mywebc=document.getElementById('template_2');
-        //const content=mywebc.content.cloneNode(true);
+       function Mychange(){
+    
         const divv=document.getElementById('mylogdiv');
-        //divv.appendChild(content);
         const my_webcomp=divv.querySelector('registration-form');
-        
-        
-       
-        
-        // Ensure the web component exists
         if (my_webcomp) {
-            // Access the shadow root
             const shadowRoot = my_webcomp.shadowRoot;
-            
-            // Ensure the shadow root exists
             if (shadowRoot) {
-                // Now access form elements inside the shadow root
                 const form = shadowRoot.querySelector('#form');
                 const username = shadowRoot.querySelector('#username');
                 const email = shadowRoot.querySelector('#email');
                 const password = shadowRoot.querySelector('#password');
                 const cpassword = shadowRoot.querySelector('#cpassword');
-               
                 const btnsub=shadowRoot.querySelector('#mysubmit');
                 // Make sure form is found before adding the event listener
                 if (form && username && email && password && cpassword ) {
@@ -330,31 +358,41 @@ font-size:18px}
         });
      })();
       //////////////////////////////////
+
+ const myForm={};
+
 //storing registration data 
-      function Mysignup(){
-      
+     export function Mysignup(){
+        const divv=document.getElementById('mylogdiv');
+        let mycomp=divv.querySelector('registration-form');
+        if(!mycomp){
         const mywebc=document.getElementById('template_2');
         const content=mywebc.content.cloneNode(true);
-        const divv=document.getElementById('mylogdiv');
         divv.appendChild(content);
-        const mycomp=divv.querySelector('registration-form');
-        const myshad=mycomp.shadowRoot;
-        const regform=myshad.getElementById('form');
+         mycomp=divv.querySelector('registration-form');
+    }
+
+        const myshadReg=mycomp.shadowRoot;
+        const regform=myshadReg.getElementById('form');
         regform.onchange=function(e){Mychange(e)}
-    
+        const btncls=myshadReg.querySelector('.close');
+        /////////////////////
+        myForm.importedF=regform;
+        ///////////////////
+        
+        btncls.addEventListener('click', function(){regform.style.display = 'none';});
+        const myRegbtn=document.getElementById('Myreg');
+        myRegbtn.addEventListener('click', function(){
+            regform.style.display = 'block'; // Show the form
+        })
+   
 
 // Listen for form submission
     regform.addEventListener('submit', function (event) {
-   // event.preventDefault(); // Prevent form from refreshing the page
-
-    ////////////////////
   
-    //////////////////////
-
-    // Get the input values
-    const username = myshad.getElementById('username').value;
-    const email = myshad.getElementById('email').value;
-    const password=myshad.getElementById('password').value;
+    const username = myshadReg.getElementById('username').value;
+    const email = myshadReg.getElementById('email').value;
+    const password=myshadReg.getElementById('password').value;
 
     // Check if data already exists in localStorage
     let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -392,72 +430,16 @@ font-size:18px}
 
     // Optionally, reset the form
   regform.reset();
+ regform.style.display='none';
   });
+  
 }
 
 //////////////////////////// sign up mini/////////////////////////
-function Mysignup_mini(){
-      
-    const mywebc=document.getElementById('template_2');
-    const content=mywebc.content.cloneNode(true);
-    const divv=document.getElementById('midlle_col');
-    divv.appendChild(content);
-    const mycomp=divv.querySelector('registration-form');
-    const myshad=mycomp.shadowRoot;
-    const regform=myshad.getElementById('form');
-    regform.onchange=function(e){Mychange(e)}
-
-
-// Listen for form submission
-regform.addEventListener('submit', function (event) {
-// event.preventDefault(); // Prevent form from refreshing the page
-
-////////////////////
-
-//////////////////////
-
-// Get the input values
-const username = myshad.getElementById('username').value;
-const email = myshad.getElementById('email').value;
-const password=myshad.getElementById('password').value;
-
-// Check if data already exists in localStorage
-let users = JSON.parse(localStorage.getItem('users')) || [];
-
-// Check if the username or email already exists
-const userExists = users.some(user => user.username === username || user.email === email);
-
-if (userExists) {
-  alert('User already exists!');
-} else {
-  // Add the new user to the users array
-  users.push({ username, email, password });
-
-  // Save the updated array back to localStorage
-  localStorage.setItem('users', JSON.stringify(users));
-
-  alert('User added successfully!');
-
-  // Send a confirmation email using EmailJS
-  const emailParams = {
-    email: email, 
-    username: username,
-    password: password };// Pass the username to the email template}; service_qtw73gp
-
-    emailjs.send('service_qtw73gp', 'template_fvj9vco', emailParams)
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                alert('Confirmation email sent successfully!');
-            }, function (error) {
-                console.error('FAILED...', error);
-                alert('Failed to send confirmation email.');
-            });
-
-}
-
-// Optionally, reset the form
-regform.reset();
-});
-}
 
 /////////////////////////////////////////////////////////////////
+
+window.Mysignup=Mysignup;
+window.Mychange=Mychange;
+export {myForm};
+window.myForm=myForm;

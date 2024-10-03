@@ -8,9 +8,11 @@
     <title>exp</title>
 </head>
 <body>
-    <script src="loginnnn.js"></script>
+
+    <script type="module" src="exp.js"></script>
+    <script type="module" src="loginnnn.js"></script>
     <header>
-        <div id="brand"><a href="#"><img src="EEG.png" alt="avatar" class="avatar" translate="no"> Singnal processing</a></div>
+        <div id="brand"><a href="#"><img src="EEG.png" alt="avatar" class="avatar" translate="no"> <span onclick="homePage()" id="homePage">Singnal processing </span ></a></div>
         <nav>
             <ul translate="no">
                 <li><a href="#"> Matlab</a></li>
@@ -26,42 +28,45 @@
             </ul>
         </nav>
         <nav>
-            <script src="Registation.js"></script>
+            <script type="module" src="Registation.js"></script>
             <!--script src="login.js"></script-->
-            
-        <!-- Templates for the web components-->
+            <template id="temp_1">
+                <mobile-menu></mobile-menu>
+
+            </template>
+        <!-- Templates for the web components-------------------------------->
             <template id="template_2">
-                
                 <registration-form >Here is registration form</registration-form>
-                
               </template>
               
               <template id="template_3">
                 <login-form> Here is login form </login-form>
-
               </template>
           <!-- ------------------------------------------------------------>
 
         <ul translate="no">
-        <li><a href="#" onclick="Mysignup(); this.onclick=null;"> Registration</a></li>
+        <li><a href="#" onclick="Mysignup(); this.onclick=null;" id="Myreg"> Registration</a></li>
         <li><a href="#" onclick="Mylogin(); this.onclick=null;" id="btnlg"> Login</a></li>
      
         </nav>
-        <div id="hamburger-icon" onclick="myFunction(this)">
+        
+        <script type="module" src="mobile_menu.js"></script>
+        <div id="hamburger-icon" onclick="myFunction(this); Mysignuppp(this); ">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
-            <ul class="mobile-menu">
+            <ul id="my_div" class="mobile-menu" onclick="preventClose(event)"></ul>
+            <!--ul class="mobile-m">
                 <li><a href="#"> Matlab</a></li>
                 <li><a href="#"> Python</a></li>
                 <li><a href="#"> Tutorials</a></li>
                 <li><a href="#" onclick="Lab1()" id="lab_menu">Labs</a></li>
                 <li><a href="#" onclick=" Mylogin_mini(); this.onclick=null;"> login</a></li>
                 <li><a href="#" onclick="Mysignup_mini(); this.onclick=null;">Registration </a></li>
+            </ul-->
 
-            </ul>
         </div>
-        <script src="exp.js"></script>
+        
     </header>
    <main>
     <div class="main" id="main_col">
@@ -91,7 +96,7 @@
        </ul>
     </div> 
     </div>
-        <div class="grid-main main_img" id="midlle_col"> <p  id="text_m"> ВлГУ- Биомедицинская инженерия </p> </div>
+        <div class="grid-main main_img" id="midlle_col"> <span  id="text_m"> ВлГУ- Биомедицинская инженерия </span> </div>
         <div class="grid-main" id="right-bar">
             <div id="mylogdiv"></div>
         
