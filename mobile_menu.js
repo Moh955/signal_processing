@@ -1,9 +1,10 @@
 
-import { Lab1, Lab2 } from "./exp.js";
+import { Lab1, Lab3, Lab2 } from "./exp.js";
 import { Mysignup} from "./Registation.js";
 import { myForm } from "./Registation.js";
 import { Mylogin } from "./loginnnn.js";
 import { checkLoginStatu } from "./exp.js";
+
 
 class mini_menu extends HTMLElement{
     constructor(){
@@ -132,6 +133,14 @@ class mini_menu extends HTMLElement{
         itemm_3_52.setAttribute('class','list')
         itemm_3_52.textContent='Lab-3';
         branch_listtt_5.appendChild(itemm_3_52);
+        itemm_3_52.addEventListener('click',()=>{ 
+          if(checkLoginStatu()){
+            Lab3()}else{
+              alert('You should log in');
+              
+            }
+          
+          });
 
         /////////////////////////////Registration////////
         const itemmm_6=document.createElement('li');
@@ -186,6 +195,23 @@ class mini_menu extends HTMLElement{
         const style=document.createElement('style');
         shadow.appendChild(style);
         style.textContent=`
+
+
+.mobile-menu{
+  display: none;
+  position:absolute;
+  top: 50px;
+  right:1px;
+  direction: rtl;
+  
+  background-color: rgba(207, 216, 236, 0.795);
+  border: 4px solid white;
+  border-radius: 15px;
+  height: calc(100vh-50px);
+  width:150px;}
+  
+
+
         ul, #myUL {
   list-style-type: none;
 }
@@ -236,16 +262,65 @@ padding:8px;}
  .list:hover{
     transform: scale(1.3);
   transition: 0.4s;
-  }
-        `
+  }`;
+  
     }
     
+ // Method to show the menu
+ // Method to toggle visibility of branches
+ addToggleFunctionality() {
+  const toggler = this.shadowRoot.querySelectorAll('.caret');
+  toggler.forEach(item => {
+      item.addEventListener('click', () => {
+          item.parentElement.querySelector('.nested').classList.toggle('active');
+          item.classList.toggle('caret-down');
+      });
+  });
+}
 
-    
+
+    // Method to toggle visibility of branches
+    addToggleFunctionality() {
+      const toggler = this.shadowRoot.querySelectorAll('.caret');
+      toggler.forEach(item => {
+          item.addEventListener('click', () => {
+              item.parentElement.querySelector('.nested').classList.toggle('active');
+              item.classList.toggle('caret-down');
+          });
+      });
+  }
+
+
+
+// Method to close the menu
+close() {
+  this.removeAttribute('activ');
+  // Collapse all open branches when closing
+  const nestedItems = this.shadowRoot.querySelectorAll('.nested.active');
+  nestedItems.forEach(nested => {
+      nested.classList.remove('active');
+  });
+  const carets = this.shadowRoot.querySelectorAll('.caret-down');
+  carets.forEach(caret => {
+      caret.classList.remove('caret-down');
+  });
+}
+
+   // Method to check if click is inside the menu
+   contains(target) {
+    return this.shadowRoot.contains(target);
+}  
 }
 
 customElements.define('mobile-menu', mini_menu);
 ////////////////////////
+
+
+
+
+let myshad;
+
+////////////////////////////view tree automate close------------
 
 
 function Mysignuppp(elem){
@@ -260,9 +335,12 @@ function Mysignuppp(elem){
   mycompmin=divv.querySelector('mobile-menu');
   }
 
-  const myshad=mycompmin.shadowRoot;
+  myshad=mycompmin.shadowRoot;
   const mybtn=myshad.querySelector('#signup');
   const ffform=myForm.importedF;
+  ////////////////////////////////////////
+  
+  /////////////////////////////////////
 
   mybtn.addEventListener('click',()=>{
     ffform.style.display='block';
@@ -274,15 +352,27 @@ function Mysignuppp(elem){
  
 
   ///////////////////////
-let toggler = myshad.querySelectorAll(".caret");
-let i;
+ // Add toggle functionality for the caret elements
+ mycompmin.addToggleFunctionality();
 
-for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
-    this.parentElement.querySelector(".nested").classList.toggle("active");
-    this.classList.toggle("caret-down");
-  });
-}
+ 
+///////////////////////////////
+const bbar1=document.querySelector('.bar1');
+const bbar2=document.querySelector('.bar2');
+const bbar3=document.querySelector('.bar3');
+/////////////////////////////
+
+ // Close menu when clicking outside
+ document.addEventListener('click', function(event) {
+  const isClickInside = mycompmin.contains(event.target) || event.target === hamburgerIcon || event.target === bbar1 || event.target === bbar2 || event.target === bbar3;
+   const menudiv=document.querySelector('#my_div');
+  if (!isClickInside) {
+      mycompmin.close(); // Close the menu
+      hamburgerIcon.classList.remove('open');
+
+  } 
+});
+///////////////////////////
 }
 
 window.Mysignuppp = Mysignuppp;

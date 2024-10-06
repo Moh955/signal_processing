@@ -3,10 +3,19 @@
 #midlle_col> div {
   padding: 20px;
   margin-top: 0;
-    /*background-color: rgba(143, 170, 221, 0.897);*/
-    background-color: aliceblue;
-    border:2px solid rgb(11, 8, 133);
-    border-radius: 15px;
+  background-color: aliceblue;
+  border: 2px solid rgb(11, 8, 133);
+  border-radius: 15px;
+  overflow-y: auto; /* Show vertical scrollbar */
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  height: 1000px;
+  white-space: normal; /* Ensure text wraps to the next line */
+  word-wrap: break-word; /* Break long words */
+  word-break: break-all; /* Break unbreakable content */
+  box-sizing: border-box; /* Ensure borders/padding don’t cause overflow */
+  max-width: 100%; /* Prevent div from exceeding parent width */
+  
+  
   }
   
   #midlle_col> h1,h2,h3, h4,h5{
