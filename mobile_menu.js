@@ -372,6 +372,33 @@ const bbar3=document.querySelector('.bar3');
 
   } 
 });
+//////////////////////////////
+
+///////////////////////////
+// Function to close the menu
+function closeMenu() {
+  mycompmin.close(); // Close the menu
+  hamburgerIcon.classList.remove('open');
+}
+// Function to detect hover out
+function setUpHoverClose() {
+  // For the menu component
+  mycompmin.addEventListener('mouseleave', closeMenu);
+
+  // If using a hamburger icon or other buttons, add mouseleave to those too if necessary
+  hamburgerIcon.addEventListener('mouseleave', function(event) {
+      // Add a slight timeout to close the menu if hovering out
+      setTimeout(function() {
+          if (!mycompmin.contains(event.relatedTarget)) {
+              closeMenu();
+          }
+      }, 150); // Adjust delay as needed
+  });
+}
+
+// Call this function to set up hover detection
+setUpHoverClose();
+////////////////////////////
 ///////////////////////////
 }
 
