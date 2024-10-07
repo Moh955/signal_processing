@@ -32,12 +32,9 @@ class loginhub extends HTMLElement{
          loginusername.setAttribute('id','loginusername');
          loginusername.setAttribute('name','loginusername');
          loginusername.setAttribute('required',true);
-         loginusername.setAttribute('placeholder','Username ...');
+         loginusername.setAttribute('placeholder','email ...');
          form.appendChild(loginusername);
          /////////////////////////////////////
- 
-       
-        
          const loginpassword=document.createElement('input');
          loginpassword.setAttribute('type','password');
          loginpassword.setAttribute('id','loginpassword');
@@ -135,11 +132,11 @@ position: fixed;
 /*---------------------------------------*/
  @media only screen and (max-width: 780px) {
       #outform {
-      width:150px;
+      width:100px;
       font-size:15px;
         position: fixed;
         top: 5%;
-        left: 50%;
+        left: 70%;
       }
     }
  @media only screen and (max-width: 780px) {
@@ -217,12 +214,8 @@ position: fixed;
  
  customElements.define('login-form', loginhub);
  
- //////////////////////////  // Login logic///////////////////////////////
+ //////////////////////////  // Login logic///////////////////////////////  
  
-
- 
-    
- ////////////////
 export function Mylogin(){
     const divv_log=document.getElementById('mylogdiv');
     let mycomp_log=divv_log.querySelector('login-form');
@@ -254,17 +247,18 @@ export function Mylogin(){
  /////////////////////////////////////////////
 // Function to check login status
  function checkLoginStatus() {
+    const email = localStorage.getItem('email');
     const username = localStorage.getItem('username');
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     const middlecol=document.getElementById('midlle_col');
       let success=false;
-    if (username && isLoggedIn === 'true') {
+    if (email && isLoggedIn === 'true') {
         // User is logged in
-        spanOut.textContent = `Welcome, ${username}!`;
+        //spanOut.textContent = `Welcome, ${username}!`;
         loginForm.style.display = 'none';
         logoutForm.style.display = 'block';
         success=true;
-    } else if (username) {
+    } else if (email) {
         // User has an account but is logged out
         spanlog.textContent = `Welcome, ${username}. Please log in.`;
         loginForm.style.display = 'block';
@@ -286,7 +280,7 @@ export function Mylogin(){
  
  loginbtn.addEventListener('click', function(e) {
     e.preventDefault();
-    const enteredUsername = myshad_log.getElementById('loginusername').value;
+    const enteredEmail = myshad_log.getElementById('loginusername').value;
     const enteredPassword = myshad_log.getElementById('loginpassword').value;
     
     const spanlog=myshad_log.getElementById('spanlog');
@@ -294,17 +288,20 @@ export function Mylogin(){
     
         // Check if the entered username and password match any stored user
         const storedUsers = JSON.parse(localStorage.getItem('users'));
-        const user = storedUsers.find(user => user.username === enteredUsername && user.password === enteredPassword);
+        const user = storedUsers.find(user => user.email === enteredEmail && user.password === enteredPassword);
 
 
         if (user) {
             // Here you can add validation for the username and password
-            localStorage.setItem('username', enteredUsername);
+            let rname=user.username;
+            console.log(rname);
+            spanOut.textContent = `Welcome, ${rname}!`;
+            localStorage.setItem('email', enteredEmail);
             localStorage.setItem('isLoggedIn', 'true');
             checkLoginStatus();
             ////////////////
-            
-                /////////////////
+           
+               /////////// /////////////////
         } else {
             
             spanlog.textContent='Please enter both username and password'}

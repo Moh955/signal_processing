@@ -365,15 +365,13 @@ const bbar3=document.querySelector('.bar3');
  // Close menu when clicking outside
  document.addEventListener('click', function(event) {
   const isClickInside = mycompmin.contains(event.target) || event.target === hamburgerIcon || event.target === bbar1 || event.target === bbar2 || event.target === bbar3;
-   const menudiv=document.querySelector('#my_div');
+   
   if (!isClickInside) {
       mycompmin.close(); // Close the menu
       hamburgerIcon.classList.remove('open');
 
   } 
 });
-//////////////////////////////
-
 ///////////////////////////
 // Function to close the menu
 function closeMenu() {
@@ -399,7 +397,6 @@ function setUpHoverClose() {
 // Call this function to set up hover detection
 setUpHoverClose();
 ////////////////////////////
-///////////////////////////
 }
 
 window.Mysignuppp = Mysignuppp;

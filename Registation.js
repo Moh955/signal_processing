@@ -359,7 +359,7 @@ background-color:red;}
      })();
       //////////////////////////////////
 
- const myForm={};
+ export const myForm={};
 
 //storing registration data 
      export function Mysignup(){
@@ -441,5 +441,5 @@ background-color:red;}
 
 window.Mysignup=Mysignup;
 window.Mychange=Mychange;
-export {myForm};
+
 window.myForm=myForm;
