@@ -265,6 +265,7 @@ background-color:red;}
                         if (emailVal === '') {
                             success = false;
                             setError(email, 'Email is required');
+                            btnsub.style.backgroundColor='black';
                             
                         } else if (!validateEmail(emailVal)) {
                             success = false;
@@ -283,9 +284,11 @@ background-color:red;}
                         if (passwordVal === '') {
                             success = false;
                             setError(password, 'Password is required');
+                            btnsub.style.backgroundColor='black';
                         } else if (passwordVal.length < 8) {
                             success = false;
                             setError(password, 'Password must be at least 8 characters long');
+                            btnsub.style.backgroundColor='black';
                         } else {
                             setSuccess(password);
                         }
@@ -359,7 +362,7 @@ background-color:red;}
      })();
       //////////////////////////////////
 
- export const myForm={};
+
 
 //storing registration data 
      export function Mysignup(){
@@ -441,5 +444,5 @@ background-color:red;}
 
 window.Mysignup=Mysignup;
 window.Mychange=Mychange;
-
+export const myForm={};
 window.myForm=myForm;
