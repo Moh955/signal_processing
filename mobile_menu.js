@@ -324,7 +324,7 @@ customElements.define('mobile-menu', mini_menu);
 let myshad;
 
 ////////////////////////////view tree automate close------------
-let ffform=Mysignup();
+
 
 function Mysignuppp(elem){
       
@@ -342,12 +342,13 @@ function Mysignuppp(elem){
   const mybtn=myshad.querySelector('#signup');
   //const ffform=myForm.importedF;
   ////////////////////////////////////////
-  if (!ffform){
+  /*if (!ffform){
     console.log('i am here present')
-  }
+  }*/
   /////////////////////////////////////
 
   mybtn.addEventListener('click',()=>{
+    const ffform=Mysignup();
     ffform.style.display='block';
   })
   
