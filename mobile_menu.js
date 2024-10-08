@@ -310,6 +310,9 @@ close() {
    contains(target) {
     return this.shadowRoot.contains(target);
 }  
+
+
+
 }
 
 customElements.define('mobile-menu', mini_menu);
@@ -321,7 +324,7 @@ customElements.define('mobile-menu', mini_menu);
 let myshad;
 
 ////////////////////////////view tree automate close------------
-
+let ffform=Mysignup();
 
 function Mysignuppp(elem){
       
@@ -337,9 +340,11 @@ function Mysignuppp(elem){
 
   myshad=mycompmin.shadowRoot;
   const mybtn=myshad.querySelector('#signup');
-  const ffform=myForm.importedF;
+  //const ffform=myForm.importedF;
   ////////////////////////////////////////
-  
+  if (!ffform){
+    console.log('i am here present')
+  }
   /////////////////////////////////////
 
   mybtn.addEventListener('click',()=>{

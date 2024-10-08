@@ -1,6 +1,6 @@
 
 
-class regi extends HTMLElement{
+export class regi extends HTMLElement{
     constructor(){
         super()
     }
@@ -212,7 +212,7 @@ background-color:red;}
     //////////////////////////////close
     
     }
-
+ 
 }
   customElements.define('registration-form',regi)
 
@@ -362,7 +362,7 @@ background-color:red;}
      })();
       //////////////////////////////////
 
-
+ export let myForm={};
 
 //storing registration data 
      export function Mysignup(){
@@ -435,7 +435,7 @@ background-color:red;}
   regform.reset();
  regform.style.display='none';
   });
-  
+  return regform;
 }
 
 //////////////////////////// sign up mini/////////////////////////
@@ -444,5 +444,5 @@ background-color:red;}
 
 window.Mysignup=Mysignup;
 window.Mychange=Mychange;
-export const myForm={};
+
 window.myForm=myForm;
