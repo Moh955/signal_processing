@@ -1,7 +1,6 @@
 
 import { Lab1, Lab3, Lab2 } from "./exp.js";
 import { Mysignup} from "./Registation.js";
-import { myForm } from "./Registation.js";
 import { Mylogin } from "./loginnnn.js";
 import { checkLoginStatu } from "./exp.js";
 
@@ -15,6 +14,7 @@ class mini_menu extends HTMLElement{
         const shadow=this.attachShadow({mode:'open'});
         const main_list=document.createElement('ul');
         main_list.setAttribute('id','myUL');
+        main_list.setAttribute('z-index','5');
         shadow.appendChild(main_list);
         /////////////////////////////
         const item=document.createElement('li');
@@ -166,7 +166,9 @@ class mini_menu extends HTMLElement{
           
           Mysignup()});
        
-
+          itemm_2_6.addEventListener('click',()=>{
+            const ffform=Mysignup();
+            ffform.style.display='block';})
 
         //spannn_6.addEventListener('click',()=>{Mysignup()})
         ///////////////////////////////////////////login------------
@@ -339,18 +341,12 @@ function Mysignuppp(elem){
   }
 
   myshad=mycompmin.shadowRoot;
-  const mybtn=myshad.querySelector('#signup');
-  //const ffform=myForm.importedF;
-  ////////////////////////////////////////
-  /*if (!ffform){
-    console.log('i am here present')
-  }*/
-  /////////////////////////////////////
-
-  mybtn.addEventListener('click',()=>{
+  //const mybtn=myshad.querySelector('#signup');
+ 
+  /*mybtn.addEventListener('click',()=>{
     const ffform=Mysignup();
     ffform.style.display='block';
-  })
+  })*/
   
   //elem.onclick = null;
   const hamburgerIcon = document.getElementById('hamburger-icon');

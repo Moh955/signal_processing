@@ -362,7 +362,7 @@ background-color:red;}
      })();
       //////////////////////////////////
 
- export let myForm={};
+ //export let myForm={};
 
 //storing registration data 
      export function Mysignup(){
@@ -380,7 +380,7 @@ background-color:red;}
         regform.onchange=function(e){Mychange(e)}
         const btncls=myshadReg.querySelector('.close');
         /////////////////////
-        myForm.importedF=regform;
+        //myForm.importedF=regform;
         ///////////////////
         
         btncls.addEventListener('click', function(){regform.style.display = 'none';});
@@ -445,4 +445,3 @@ background-color:red;}
 window.Mysignup=Mysignup;
 window.Mychange=Mychange;
 
-window.myForm=myForm;

@@ -70,6 +70,7 @@ nav li{
   border-radius: 10px;
 }
 #left-bar>li{
+  cursor: pointer;
   font-size:medium;
   margin-top: 8px;
   font-weight:normal;
@@ -82,6 +83,13 @@ nav li{
   height: auto;
 }
  
+#left-bar>li:hover{
+  transform: scale(1.05);
+  transition: 0.4s;
+  border-color: rgb(158, 29, 147);
+}
+
+
 
 .main {
   display: grid;
@@ -110,6 +118,7 @@ nav li{
 animation-name: textt;
 animation-duration: 30s;
 position: relative;
+z-index: 1;
 
 
 
