@@ -312,22 +312,13 @@ close() {
    contains(target) {
     return this.shadowRoot.contains(target);
 }  
-
-
-
 }
 
 customElements.define('mobile-menu', mini_menu);
 ////////////////////////
-
-
-
-
 let myshad;
 
 ////////////////////////////view tree automate close------------
-
-
 function Mysignuppp(elem){
       
   
@@ -371,10 +362,8 @@ const bbar3=document.querySelector('.bar3');
   if (!isClickInside) {
       mycompmin.close(); // Close the menu
       hamburgerIcon.classList.remove('open');
-
   } 
 });
-///////////////////////////
 // Function to close the menu
 function closeMenu() {
   mycompmin.close(); // Close the menu

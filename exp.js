@@ -29,55 +29,71 @@ export function checkLoginStatu() {
 }
   
 /////////////////////////////////////////////////////////* When the user clicks on the button,toggle between hiding and showing the dropdown content */
+
+/*function ShowMenu(){
+  const mydropDown=document.getElementById("myDropdown");
+  mydropDown.style.display='block';
+}
+function hideMenu(){
+  const mydropDown=document.getElementById("myDropdown");
+  mydropDown.style.display='none';
+}*/
+///////////////////////////
+
+// Function to show the menu
+/*function toggleshowANDhide(){*/
+function Mymenumanager(){
+let menuTimeout;
+  function ShowMenu() {
+    const mydropDown = document.getElementById("myDropdown");
+    mydropDown.style.display = 'block';
+    clearTimeout(menuTimeout);
+  }
+  
+  // Function to hide the menu
+  function hideMenu() {
+    const mydropDown = document.getElementById("myDropdown");
+    menuTimeout=setTimeout(()=>{mydropDown.style.display = 'none';}, 200);
+    
+  }
+  
+  // Get the trigger and menu elements
+  const lab_disabled = document.getElementById('labs_dis');
+  const mydropDown = document.getElementById("myDropdown");
+  
+  // Add mouseover and mouseout event listeners to the trigger
+  lab_disabled.addEventListener('mouseover', ShowMenu);
+  lab_disabled.addEventListener('mouseleave', function(event) {
+    // Only hide the menu if the mouse has left both the trigger and the menu
+    if (!mydropDown.contains(event.relatedTarget)) {
+      hideMenu();
+    }
+  });
+  
+  // Add mouseenter and mouseleave event listeners to the menu
+  mydropDown.addEventListener('mouseenter', ShowMenu);
+  mydropDown.addEventListener('mouseleave', function(event) {
+    // Only hide the menu if the mouse has left both the menu and the trigger
+    if (!lab_disabled.contains(event.relatedTarget)) {
+      hideMenu();
+    }
+  });}
+
+/////////////////////////////
+//////////////////////////////////////////////////////
 function DropDown() {
   const lab_disabled=document.getElementById('labs_dis');
+  const mydropDown=document.getElementById("myDropdown");
   if(checkLoginStatu()){
-  document.getElementById("myDropdown").classList.toggle("show");} else{
+  mydropDown.classList.add("show");
+  Mymenumanager()
+
+} else{
     alert('Log in to access labs')
   }
 }
 
-
-///////////////////////left bar function/////////////////////
-/*(function signal_1(){
-    var cssId = 'myCss';  // you could encode the css path itself to generate id..
-if (!document.getElementById(cssId))
-{
-    var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.id   = cssId;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'tom.css';
-    link.media = 'all';
-    head.appendChild(link);
-}
-  const trigger=document.getElementById('d1');
-   const hoverDiv=document.createElement('div');
-   
-  document.body.appendChild(hoverDiv);
-  hoverDiv.style.display='none'
-  hoverDiv.innerHTML=` <div id="hoverDiv"><p> <span> Интуитивно: </span> 
-    сигнал — это описание того, как один параметр или величина связана с другим параметром или величиной.</p>
-    
-    <p> <span> Математически:</span> сигнал описывается математически как функция двух или более независимых переменных, например,
-    X(t)=25t^2;    X(c,n)=2c+4n;  s(x,y)=2xy+10y^2; </p>
-    <p><span>Для цифровых технологий:</span> сигнал — вектор или комбинация векторов (матрица).</p> </div>
-    `
-
-    function ShowUp(){
-    hoverDiv.style.display = 'block';}
-    function hidefull(){
-    hoverDiv.style.display = 'none';}
-
- trigger.addEventListener('mouseover', ShowUp);
- trigger.addEventListener('mouseout', hidefull)
-
-})()*/
-
-  
-
-
+//////////////The function devoted for hidding menu on moveout//////////////////////
 
 /////////////////////333333////////////////////
 
@@ -570,7 +586,7 @@ element.innerHTML=`<div lang='ru' translate="no">
 Передискретизация - Это дискретизация сигнала с частотой, превышающей основную частоту дискретизации. 
 идеальная дискретизация - частота дискретизации равна максимальной частоте в спектре сигнала.
 </p>
-<li>Основные этапы работы</li>
+<li><h5>Основные этапы работы</h5></li>
 
 <p>Создание непрерывного сигнала.</p>
 <pre>
@@ -586,7 +602,7 @@ title('Непрерывный сигнал');
 xlabel('Время, с'); 
 ylabel('Амплитуда');
 </pre>
-
+  <ul class="simple">
 <li> <h5> Задание 1:  <span style="font-weight: normal;">Рассмотрим аналоговый сигнал: 
 <pre> x(t)=3 cos(⁡100πt); </pre>
 Определите минимальную частоту дискретизации, необходимую для избежания наложения спектров.
@@ -601,11 +617,11 @@ ylabel('Амплитуда');
 </span> </h5></li>
 <li> <h5> Задание 4:  <span style="font-weight: normal;">Используйте Simulink Toolbox в Matlab для генерации синусоидального сигнала, сэмплера и исследуйте влияние   субдискретизации, передискретизации, идеальной дискретизации на сигналы.
 </span> </h5></li>
-
+</ul>
  
 
     <li> <h5>Содержание отчета </h5></li>
-    <ul class="simple"><h5>Содержание отчета</h5> 
+    <ul class="simple">
    <li>1. Титульный лист</li>
    <li>2. Цель работы.</li>
    <li>3. Результаты Задания 1,2,3,4 </li>

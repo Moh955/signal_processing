@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="exp.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <title>exp</title>
+    <title>signal</title>
 </head>
 <body>
 
     <script type="module" src="exp.js"></script>
     <script type="module" src="loginnnn.js"></script>
     <header>
-        <div id="brand"><a href="#"><img src="EEG.png" alt="avatar" class="avatar" translate="no"> <span onclick="homePage()" id="homePage">Singnal processing </span ></a></div>
+        <div id="brand"><a href="#"><img src="EEG.png" alt="avatar" class="avatar" translate="no">
+             <span onclick="homePage()" id="homePage">Singnal processing </span ></a></div>
         <nav>
             <ul translate="no">
                 <li><a href="#"> Matlab</a></li>
                 <li><a href="#"> Python</a></li>
                 <li><a href="#"> Tutorials</a></li>
                 <ul class="dropdown"> 
-                    <li> <a href="#" onclick="DropDown()" class="dropbtn" id="labs_dis" >Labs</a></li> 
+                    <li> <a href="#" onclick="DropDown(this)" class="dropbtn" id="labs_dis" >Labs</a></li> 
                     <ul class="dropdown-content" id="myDropdown">
-                    <li><a href="#" onclick="Lab1()"> Лаб.№ 1</a></li>
-                    <li><a href="#"  onclick="Lab2()"> Лаб.№ 2</a></li>
-                    <li><a href="#"  onclick="Lab3()"> Лаб.№ 3</a></li>
+                    <li onclick="Lab1()"> Лаб -1</li>
+                    <li onclick="Lab2()"> Лаб-2</li>
+                    <li onclick="Lab3()"> Лаб- 3</li>
                 </ul>
                 </ul> 
             </ul>
@@ -91,7 +92,7 @@
        </ul>
     </div> 
     </div>
-        <div class="grid-main main_img" id="midlle_col">  <span  id="text_m"> ВлГУ- Биомедицинская инженерия </span> </div>
+        <div class="grid-main main_img" id="midlle_col">  <p  id="text_m"> Биомедицинская инженерия </p> </div>
         <div class="grid-main" id="right-bar">
             <div id="mylogdiv"></div>
            
