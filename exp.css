@@ -59,16 +59,7 @@ nav li{
   border-radius: 10px;
   margin: 1px;
 }
-#left-bar{
-  display: flex;
-  flex-direction: column;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: rgba(99, 142, 206, 0.603); 
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 800px;
-}
+
 
 #left-bar::-webkit-scrollbar{
   width: 5px;
@@ -106,25 +97,8 @@ nav li{
   
 }
 
-#left-bar>li{
-  cursor: pointer;
-  font-size:medium;
-  margin-top: 8px;
-  font-weight:normal;
-  color: aliceblue;
-  border: 1px solid beige;
-  border-radius: 10px;
 
-  padding:1px;
-  width: auto;
-  height: auto;
-}
- 
-#left-bar>li:hover{
-  transform: scale(1.05);
-  transition: 0.4s;
-  border-color: rgb(158, 29, 147);
-}
+
 
 
 
@@ -135,6 +109,7 @@ nav li{
   margin: 2px;
   padding: 2px;
   column-gap: 3px;
+
   
 }
 
