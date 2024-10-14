@@ -8,14 +8,13 @@
   border-radius: 15px;
   overflow-y: auto; /* Show vertical scrollbar */
   overflow-x: hidden; /* Prevent horizontal scrollbar */
-  height: 732px;
+   
   white-space: normal; /* Ensure text wraps to the next line */
   word-wrap: break-word; /* Break long words */
   /*word-break: break-all;  Break unbreakable content */
   box-sizing: border-box; /* Ensure borders/padding don’t cause overflow */
-  max-width: 100%; /* Prevent div from exceeding parent width */
-  
-  
+  max-width: 100%; /* Prevent div from exceeding parent width */ 
+  box-sizing: border-box;
   }
   
   #midlle_col> h1,h2,h3, h4,h5{

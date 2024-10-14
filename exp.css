@@ -26,7 +26,8 @@ header {
   border-color: rgb(126, 122, 122);
   border-style:solid outset;
   border-radius: 20px;
-  
+ 
+
 }
 
 #brand{
@@ -44,12 +45,14 @@ header {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  
 }
 
 nav {
 color: black;
 font-size: large;
 font-weight: bold;
+
 }
 nav li{
   border: 1px solid rgb(20, 4, 241);
@@ -62,13 +65,47 @@ nav li{
   border: 1px solid white;
   border-radius: 10px;
   background-color: rgba(99, 142, 206, 0.603); 
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 800px;
 }
+
+#left-bar::-webkit-scrollbar{
+  width: 5px;
+ 
+}
+#left-bar::-webkit-scrollbar-thumb{
+  background-color: rgb(12, 83, 110);
+  
+}
+
+.grid-main::-webkit-scrollbar{
+  width: 8px;
+  
+}
+.grid-main::-webkit-scrollbar-thumb{
+  background-color: rgb(37, 6, 179);
+  height: 10px;
+}
+
+.grid-main::-webkit-scrollbar-track{
+  background-color: rgb(212, 203, 203);
+  width: 8px;
+}
+
+.grid-main::-webkit-scrollbar-button{
+  background-color: rgba(0, 0, 0, 0.801);
+}
+
+
 
 .left-barr {
   background-color: rgba(99, 142, 206, 0.603);
   border: 1px solid rgb(88, 91, 146);
   border-radius: 10px;
+  
 }
+
 #left-bar>li{
   cursor: pointer;
   font-size:medium;
@@ -94,9 +131,11 @@ nav li{
 .main {
   display: grid;
   grid-template-columns: 10% 70% 20%;
+ height: 800px;
   margin: 2px;
   padding: 2px;
   column-gap: 3px;
+  
 }
 
 .grid-main {
@@ -113,6 +152,7 @@ nav li{
 #midlle_col{
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  
 }
 #midlle_col> #text_m{
 animation-name: textt;
@@ -124,6 +164,7 @@ animation-iteration-count: infinite;
 text-align:left;
 background-color: rgb(51, 39, 216);
 top:95%;
+
 }
 
 /*@keyframes textt {
@@ -150,7 +191,7 @@ display: block;
 border-top: 1px solid;
 height: 50px;
 border-color: rgb(106, 106, 109);
-
+flex-shrink: 0;
 }
 
 .main_img{

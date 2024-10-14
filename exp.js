@@ -641,6 +641,3 @@ window.Lab3=Lab3;
 window.DropDown=DropDown;
 window.homePage=homePage;
 window.checkLoginStatu=checkLoginStatu;
-//window.signal=signal;
-//window.signal_1=signal_1;
-//window.signal_2=signal_2;
