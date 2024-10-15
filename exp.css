@@ -319,3 +319,65 @@ margin: 1px;
   }
   
 }
+
+/*  -----------------------Advertisement style                  */
+/* Container for ads */
+.ad-container {
+  margin-top: 250px;
+  width: 100%; /* Adjust width to fit your layout */
+  height: 500px; /* Adjust the height to fit your image */
+  overflow: hidden; /* Hide overflow content */
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styling for the individual ads */
+.ad-image {
+  width: 100%;
+  height: 180px;
+  opacity: 0; /* Initially hide the images */
+  position: absolute; /* Place all ads in the same position */
+  animation: showAd 25s infinite linear; /* Apply animation */
+}
+
+/* Ad 1 animation */
+.ad1 {
+  animation-delay: 0s; /* No delay for the first image */
+}
+.ad2 {
+  animation-delay: 5s; /* 5 seconds delay for the second image */
+}
+.ad3 {
+  animation-delay: 10s; /* 10 seconds delay for the third image */
+}
+.ad4 {
+  animation-delay: 15s; /* 15 seconds delay for the fourth image */
+}
+.ad5 {
+  animation-delay: 20s; /* 20 seconds delay for the fifth image */
+}
+
+/* Keyframes for sequential display */
+@keyframes showAd {
+  0%, 20% {
+      opacity: 0;
+      transform: translateY(100%); /* Initially off-screen to the right */
+  }
+  25%, 40% {
+      opacity: 1;
+      transform: translateY(0); /* Move into view */
+  }
+  60%, 80% {
+      opacity: 1;
+      transform: translateY(0); /* Stay in view for a while */
+  }
+  85%, 100% {
+      opacity: 0;
+      transform: translateY(-100%); /* Move off-screen to the left */
+  }
+}
