@@ -97,11 +97,6 @@ nav li{
   
 }
 
-
-
-
-
-
 .main {
   display: grid;
   grid-template-columns: 10% 70% 20%;
@@ -129,17 +124,31 @@ nav li{
   overflow-x: hidden; /* Prevent horizontal scrolling */
   
 }
-#midlle_col> #text_m{
+
+#midlle_col> .text_m{
 animation-name: textt;
-animation-duration: 30s;
+animation-duration: 20s;
 position: relative;
 z-index: 1;
 will-change: transform; /* Enables smoother animations */
 animation-iteration-count: infinite;
-text-align:left;
-background-color: rgb(51, 39, 216);
+
+font-size: larger;
+font-weight: bold;
+color: aliceblue;
+display:inline-block;
+/*background-color: rgb(51, 39, 216);*/
 top:95%;
 
+
+}
+
+#t1 {
+  animation-delay: 0s; /* 15 seconds delay for the fourth image */
+}
+#t2 {
+  animation-delay: 7s; /* 20 seconds delay for the fifth image */
+  
 }
 
 /*@keyframes textt {
@@ -154,10 +163,10 @@ top:95%;
 
 @keyframes textt {
   from {
-    transform: translateX(100%); /* Start off-screen to the right */
+    transform: translateX(-100%); /* Start off-screen to the right */
 }
 to {
-    transform: translateX(-100%); /* End off-screen to the left */
+    transform: translateX(100%); /* End off-screen to the left */
 }
 }
 .footer {
@@ -268,7 +277,6 @@ header ul li:hover{
   cursor: pointer;
 }
 
-
 .dropdown-content{
   display: none;
   position: absolute;
@@ -323,7 +331,7 @@ margin: 1px;
 /*  -----------------------Advertisement style                  */
 /* Container for ads */
 .ad-container {
-  margin-top: 250px;
+  margin-top: 300px;
   width: 100%; /* Adjust width to fit your layout */
   height: 500px; /* Adjust the height to fit your image */
   overflow: hidden; /* Hide overflow content */
@@ -346,19 +354,19 @@ margin: 1px;
 }
 
 /* Ad 1 animation */
-.ad1 {
+.ad5 {
   animation-delay: 0s; /* No delay for the first image */
 }
-.ad2 {
+.ad4 {
   animation-delay: 5s; /* 5 seconds delay for the second image */
 }
 .ad3 {
   animation-delay: 10s; /* 10 seconds delay for the third image */
 }
-.ad4 {
+.ad2 {
   animation-delay: 15s; /* 15 seconds delay for the fourth image */
 }
-.ad5 {
+.ad1 {
   animation-delay: 20s; /* 20 seconds delay for the fifth image */
 }
 
@@ -368,7 +376,7 @@ margin: 1px;
       opacity: 0;
       transform: translateY(100%); /* Initially off-screen to the right */
   }
-  25%, 40% {
+ 30%, 40% {
       opacity: 1;
       transform: translateY(0); /* Move into view */
   }
@@ -376,7 +384,7 @@ margin: 1px;
       opacity: 1;
       transform: translateY(0); /* Stay in view for a while */
   }
-  85%, 100% {
+  100%, 100% {
       opacity: 0;
       transform: translateY(-100%); /* Move off-screen to the left */
   }
