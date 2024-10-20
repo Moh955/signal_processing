@@ -3,6 +3,7 @@ import { Lab1, Lab3, Lab2 } from "./exp.js";
 import { Mysignup} from "./Registation.js";
 import { Mylogin } from "./loginnnn.js";
 import { checkLoginStatu } from "./exp.js";
+import { Tut_sampling, Tut_quant } from "./exp.js";
 
 
 class mini_menu extends HTMLElement{
@@ -81,11 +82,32 @@ class mini_menu extends HTMLElement{
         itemm_2_3.setAttribute('class','list')
         itemm_2_3.textContent='First-tutorial';
         branch_listtt.appendChild(itemm_2_3);
+
+       itemm_2_3.addEventListener('click',()=>{ 
+          
+          if(checkLoginStatu()){
+            Tut_sampling()}else{
+              alert('You should log in');
+              
+            }
+          
+          });
         /////////////////
         const itemm_3_3=document.createElement('li');
         itemm_3_3.setAttribute('class','list')
         itemm_3_3.textContent='Second-tutorial';
         branch_listtt.appendChild(itemm_3_3);
+
+
+        itemm_3_3.addEventListener('click',()=>{ 
+          
+          if(checkLoginStatu()){
+            Tut_quant()}else{
+              alert('You should log in');
+              
+            }
+          
+          });
 
         /////////////////////Labs---------------------
 

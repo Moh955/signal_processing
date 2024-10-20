@@ -7,8 +7,21 @@ location.reload();
 }
 
 //////////////////////////////////////////////////
-
-//////////////////////////check login status//////////////////////////////
+function styling(){
+  let cssId = 'myCss';  // you could encode the css path itself to generate id..
+if (!document.getElementById(cssId))
+{
+    var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+    link.id   = cssId;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'tom.css';
+    link.media = 'all';
+    head.appendChild(link);
+}
+}
+//////////////////////////check login status//////////////////////////
 export function checkLoginStatu() {
   const username = localStorage.getItem('email');
   const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -39,54 +52,58 @@ function hideMenu(){
   mydropDown.style.display='none';
 }*/
 ///////////////////////////
+ const trig = document.getElementById('labs_dis');
+const dropdown = document.getElementById("myDropdown");
+//-------------------------------
+const trig1 = document.getElementById('tut_id');
+const dropdown1 = document.getElementById("tut_dropdown");
+/////------------------------------------------------
+const trig2= document.getElementById('pyth_id');
+const dropdown2 = document.getElementById("pyth_dropdown");
+///--------------------------------------------------
+const trig3= document.getElementById('mat_id');
+const dropdown3 = document.getElementById("mat_dropdown");
 
-// Function to show the menu
-/*function toggleshowANDhide(){*/
-function Mymenumanager(){
+
+
+function Mymenumanager(trig, dropdown){
 let menuTimeout;
+
   function ShowMenu() {
-    const mydropDown = document.getElementById("myDropdown");
-    mydropDown.style.display = 'block';
+   dropdown.style.display = 'block';
     clearTimeout(menuTimeout);
   }
-  
   // Function to hide the menu
   function hideMenu() {
-    const mydropDown = document.getElementById("myDropdown");
-    menuTimeout=setTimeout(()=>{mydropDown.style.display = 'none';}, 200);
+    
+    menuTimeout=setTimeout(()=>{dropdown.style.display = 'none';}, 200);
     
   }
-  
   // Get the trigger and menu elements
-  const lab_disabled = document.getElementById('labs_dis');
-  const mydropDown = document.getElementById("myDropdown");
-  
   // Add mouseover and mouseout event listeners to the trigger
-  lab_disabled.addEventListener('mouseover', ShowMenu);
-  lab_disabled.addEventListener('mouseleave', function(event) {
+  trig.addEventListener('mouseover', ShowMenu);
+trig.addEventListener('mouseleave', function(event) {
     // Only hide the menu if the mouse has left both the trigger and the menu
-    if (!mydropDown.contains(event.relatedTarget)) {
+    if (!dropdown.contains(event.relatedTarget)) {
       hideMenu();
     }
   });
   
   // Add mouseenter and mouseleave event listeners to the menu
-  mydropDown.addEventListener('mouseenter', ShowMenu);
-  mydropDown.addEventListener('mouseleave', function(event) {
+  dropdown.addEventListener('mouseenter', ShowMenu);
+  dropdown.addEventListener('mouseleave', function(event) {
     // Only hide the menu if the mouse has left both the menu and the trigger
-    if (!lab_disabled.contains(event.relatedTarget)) {
+    if (!trig.contains(event.relatedTarget)) {
       hideMenu();
     }
   });}
 
 /////////////////////////////
 //////////////////////////////////////////////////////
-function DropDown() {
-  const lab_disabled=document.getElementById('labs_dis');
-  const mydropDown=document.getElementById("myDropdown");
+function DropDown(trig, dropdown) {
   if(checkLoginStatu()){
-  mydropDown.classList.add("show");
-  Mymenumanager()
+  dropdown.classList.add("show");
+  Mymenumanager(trig, dropdown)
 
 } else{
     alert('Log in to access labs')
@@ -95,22 +112,10 @@ function DropDown() {
 
 //////////////The function devoted for hidding menu on moveout//////////////////////
 
-
 ////////////////////////// Лаб 1................................./////////////////////////////////////////////////
 
 export function Lab1(){
-  var cssId = 'myCss';  // you could encode the css path itself to generate id..
-if (!document.getElementById(cssId))
-{
-    var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.id   = cssId;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'tom.css';
-    link.media = 'all';
-    head.appendChild(link);
-}
+  styling()
 
   const element=document.getElementById('midlle_col');
 element.innerHTML=`<div lang='ru' translate="no"> 
@@ -303,19 +308,8 @@ diff_v = v1 - v2= -3    -3    -3;</pre>
 
 ////////////////////////////////////////////////////////////
 export function Lab2(){
-  var cssId = 'myCss';  // you could encode the css path itself to generate id..
-if (!document.getElementById(cssId))
-{
-    var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.id   = cssId;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'tom.css';
-    link.media = 'all';
-    head.appendChild(link);
-}
 
+  styling();
   const element=document.getElementById('midlle_col');
 element.innerHTML=`<div lang='ru' translate="no"> 
 
@@ -460,19 +454,7 @@ disp(B);
 
 //////////lab3/////////////////////
 export function Lab3(){
-  var cssId = 'myCss';  // you could encode the css path itself to generate id..
-if (!document.getElementById(cssId))
-{
-    var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.id   = cssId;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'tom.css';
-    link.media = 'all';
-    head.appendChild(link);
-}
-
+  styling();
   const element=document.getElementById('midlle_col');
 element.innerHTML=`<div lang='ru' translate="no"> 
 
@@ -544,6 +526,68 @@ ylabel('Амплитуда');
 `
 }
 /////////////////////////////
+
+export function Tut_sampling(){
+ styling();
+ const element=document.getElementById('midlle_col');
+element.innerHTML=`<div lang='en' > 
+   <h2> Sampling and quantization </h2>
+<p>In order to create a signal which is digital, we need to convert continuous data into digital form. 
+Sampling and quantization are necessary steps in signal processing in  order to convert continuous signal 
+into digital form.</p> 
+
+
+<ul id="main_ul" >
+<li><h5>Definition of sampling</h5>
+<p>	Sampling: Digitizing the co-ordinate value is called sampling, whereas digitizing the 
+amplitude value is called quantization. Sampling is done prior to the quantization process. 
+Sampling converts the independent variable
+ (time in this example) from continuous to discrete.. The sampling 
+theorem guarantees that an analog signal can be in theory 
+perfectly recovered as long as the sampling rate is at least twice of the highest-frequency 
+component of the analog signal to be sampled.</p>
+
+</li>
+<li><h5>Advantages of downsampling </h5>
+
+<p> Downsampling reduces the size required for storing and transmitting signals, and in result, 
+makes signal processing faster. It should be noticed that downsampling faster, but upsampling more precise.
+</p>
+
+</li>
+</ul>
+
+</div>`
+}
+/////////////////////////
+export function Tut_quant(){
+  styling();
+  const element=document.getElementById('midlle_col');
+ element.innerHTML=`<div lang='en' > 
+    <h2> Quantization </h2>
+ <p>The process of converting analog voltage with infinite precision to finite precision is 
+ called the quantization process. For example, if the digital processor has only a 3-bit word, the amplitudes can be converted into eight different levels. 
+A unipolar quantizer deals with analog signals ranging from 0 V to a 
+positive reference voltage, and a bipolar quantizer has an analog signal 
+range from a negative reference to a positive reference.</p>
+<li>The notations and general rules for quantization are: The symbol Δ is the step size of the quantizer 
+or the ADC resolution.
+∆=(x_max-x_min)/L ; where xmax and xmin are the maximum value and minimum values, 
+respectively, of the analog input signal x. </li>
+<li>The symbol L denotes the number of quantization levels, which is determined by Eq.  L=2^m where m is the number of bits used in ADC.
+i=round((x-x_min)/∆);  x_q=x_min ⁡ +i∆; </li> 
+<li>Finally, x_q indicates the quantization level, and i is an index corresponding to the binary code.</li>
+<li>When the DAC outputs the analog amplitude, x_q with finite precision, 
+it introduces the quantization error defined as  
+ e_q=x_q-x. The quantization error is bounded by half of the step size, that is, (-∆)/2<x_q≤∆/2  
+ </li>. 
+ <li>In practice, we can empirically confirm that the quantization error appears
+  in uniform distribution when the step size is much smaller than the dynamic range 
+  of the signal samples and there are a sufficiently large number of samples.</li>
+ 
+ </div>`
+ }
+////////////////////////////
 window.myFunction=myFunction;
 window.Lab1=Lab1;
 window.Lab2=Lab2;
@@ -551,3 +595,13 @@ window.Lab3=Lab3;
 window.DropDown=DropDown;
 window.homePage=homePage;
 window.checkLoginStatu=checkLoginStatu;
+window.Tut_sampling=Tut_sampling;
+window.trig=trig;
+window.dropdown=dropdown;
+window.trig1=trig1;
+window.dropdown1=dropdown1;
+window.Tut_quant=Tut_quant;
+window.trig2=trig2;
+window.dropdown2=dropdown2;
+window.trig3=trig3;
+window.dropdown3=dropdown3;

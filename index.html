@@ -61,11 +61,35 @@
              <span onclick="homePage()" id="homePage">Singnal processing </span ></a></div>
         <nav>
             <ul translate="no">
-                <li><a href="#"> Matlab</a></li>
-                <li><a href="#"> Python</a></li>
-                <li><a href="#"> Tutorials</a></li>
+            
+                <ul class="dropdown">
+                  <li onclick="DropDown(trig3, dropdown3)"   id="mat_id"> Python</li>
+                  <ul class="dropdown-content" id="mat_dropdown">
+                    <li onclick=""> Script</li>
+                    <li onclick=""> Function</li>
+                    </ul>
+  
+                  </ul>
+
+                <ul class="dropdown">
+                  <li onclick="DropDown(trig2, dropdown2)"   id="pyth_id"> Python</li>
+                  <ul class="dropdown-content" id="pyth_dropdown">
+                    <li onclick=""> Data types</li>
+                    <li onclick=""> Function</li>
+  
+                  </ul>
+
+              </ul>
+                <ul class="dropdown">
+                <li onclick="DropDown(trig1, dropdown1)"   id="tut_id"> Tutorials</li>
+                <ul class="dropdown-content" id="tut_dropdown">
+                  <li onclick="Tut_sampling()"> Sampling</li>
+                  <li onclick="Tut_quant()"> Quantization</li>
+
+                </ul>
+              </ul>
                 <ul class="dropdown"> 
-                    <li> <a href="#" onclick="DropDown(this)" class="dropbtn" id="labs_dis" >Labs</a></li> 
+                    <li> <a href="#" onclick="DropDown(trig, dropdown)"  id="labs_dis" >Labs</a></li> 
                     <ul class="dropdown-content" id="myDropdown">
                     <li onclick="Lab1()"> Лаб -1</li>
                     <li onclick="Lab2()"> Лаб-2</li>
@@ -78,8 +102,7 @@
             <script type="module" src="Registation.js"></script>
            
            
-            
-
+        
         <ul translate="no">
         <li><a href="#" onclick="Mysignup(); this.onclick=null;" id="Myreg"> Registration</a></li>
         <li><a href="#" onclick="Mylogin(); this.onclick=null;" id="btnlg"> Login</a></li>
