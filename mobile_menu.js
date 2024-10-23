@@ -1,5 +1,5 @@
 
-import { Lab1, Lab3, Lab2 } from "./exp.js";
+import { Lab1, Lab3, Lab2, Lab4 } from "./exp.js";
 import { Mysignup} from "./Registation.js";
 import { Mylogin } from "./loginnnn.js";
 import { checkLoginStatu } from "./exp.js";
@@ -163,7 +163,19 @@ class mini_menu extends HTMLElement{
             }
           
           });
-
+////////////////////////////////////////////////
+const itemm_3_53=document.createElement('li');
+itemm_3_53.setAttribute('class','list')
+itemm_3_53.textContent='Lab-4';
+branch_listtt_5.appendChild(itemm_3_53);
+itemm_3_53.addEventListener('click',()=>{ 
+  if(checkLoginStatu()){
+    Lab4()}else{
+      alert('You should log in');
+      
+    }
+  
+  });
         /////////////////////////////Registration////////
         const itemmm_6=document.createElement('li');
         const spannn_6=document.createElement('span');
